@@ -1,5 +1,5 @@
 # Java-Prescription-Project-GitHub
-IronHack Week 13 Final Project
+IronHack Backend Course Final Project
 
 ## Abstract
 
