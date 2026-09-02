@@ -273,4 +273,4 @@ The Prescription Planning System can be extended with additional functionality t
 * Community discussions and technical articles from developer forums.
 
 ### Team
-* Solo created by @ilearnprogramms
+* Solo created by @ilearnprograms
