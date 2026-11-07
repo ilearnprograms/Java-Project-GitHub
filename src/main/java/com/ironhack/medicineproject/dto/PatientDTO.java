@@ -34,7 +34,7 @@ public class PatientDTO {
     private String password;
 
     @JsonProperty("patientTitle")
-    @NotNull(message = "Title cannot be empty")
+    @NotNull(message = "Patients Title cannot be empty")
     private PatientTitles patientTitle;
 
     @JsonProperty("patientLastName")

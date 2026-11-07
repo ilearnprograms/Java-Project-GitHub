@@ -27,7 +27,7 @@ public class MedicineDTO {
     private Long medicineID;
 
     @JsonProperty("medicineName")
-    @NotBlank(message = "Medicine cannot be empty")
+    @NotBlank(message = "Medicine name cannot be empty")
     @Size(min = 5, max = 30, message = "Medicine name must be between 5 and 30 characters")
     private String medicineName;
 

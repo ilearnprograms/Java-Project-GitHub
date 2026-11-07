@@ -24,7 +24,7 @@ public class MedicineController {
     public ResponseEntity getAllMedicines() {
 
         Logger medicineLogger = Logger.getLogger("MedicineController");
-        medicineLogger.info("Getting all Medicines");
+        medicineLogger.info("Displaying all Medicines");
 
         List<MedicineDTO> medicineDTOs = medicineService.getAllMedicines()
                 .stream()
@@ -42,7 +42,7 @@ public class MedicineController {
     public ResponseEntity addNewMedicine(@Valid @RequestBody MedicineDTO medicineDTO) {
 
         Logger medicineLogger = Logger.getLogger("MedicineController");
-        medicineLogger.info("Posting the following medicine: " +  medicineDTO.getMedicineName());
+        medicineLogger.info("Adding the following medicine to the database: " +  medicineDTO.getMedicineName());
 
         MedicineModel addMedicine = medicineService.addNewMedicine(medicineDTO);
         return
@@ -54,7 +54,7 @@ public class MedicineController {
                                              @RequestBody MedicineDTO medicineDTO){
 
         Logger medicineLogger = Logger.getLogger("MedicineController");
-        medicineLogger.info("Updating quantity for: " + medicineID);
+        medicineLogger.info("Updating the quantity for: " + medicineID);
 
         MedicineModel updatedMedicine =
                 medicineService.updateMedicineQuantity(medicineID, medicineDTO.getMedicineQuantity());
@@ -66,7 +66,7 @@ public class MedicineController {
     public ResponseEntity<?> deleteMedicine(@RequestBody MedicineDTO medicineDTO) {
 
         Logger medicineLogger = Logger.getLogger("MedicineController");
-        medicineLogger.info("Deleting the medicine: " +  medicineDTO.getMedicineName());
+        medicineLogger.info("Deleting the following medicine: " +  medicineDTO.getMedicineName());
 
         MedicineModel deletedMedicine = medicineService.deleteMedicine(medicineDTO);
         return

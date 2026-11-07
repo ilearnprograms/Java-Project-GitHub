@@ -32,7 +32,7 @@ public class MedicineService {
 
         final MedicineModel medicine = medicineRepository.findById(medicineID)
                         .orElseThrow(()
-                                -> new SearchNotFoundException("Couldn't find medicine with id: " + medicineID));
+                                -> new SearchNotFoundException("Couldn't find medicine to update for quantity: " + medicineID));
 
         medicine.setMedicineQuantity(medicineQuantity);
         return medicineRepository.save(medicine);
@@ -44,7 +44,7 @@ public class MedicineService {
                 .findByMedicineName(medicineDTO.getMedicineName());
 
         if (medicine == null){
-            throw new SearchNotFoundException("Couldn't find the medicine: " +
+            throw new SearchNotFoundException("Couldn't find the medicine for deletion: " +
                       medicineDTO.getMedicineName());
         }
 

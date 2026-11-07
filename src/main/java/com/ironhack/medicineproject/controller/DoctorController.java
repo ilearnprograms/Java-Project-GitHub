@@ -23,7 +23,7 @@ public class DoctorController {
     @GetMapping("/welcome")
     public String greet() {
         return """
-                Welcome to Prescription System! \n
+                Welcome to Medicine Prescription System! \n
                 Please enter the username and password that's been provided to you by the Medical Staff to see the prescriptions.""";
     }
 
@@ -31,7 +31,7 @@ public class DoctorController {
     public ResponseEntity getAllDoctors() {
 
         Logger doctorLogger = Logger.getLogger("DoctorController");
-        doctorLogger.info("Geting all doctors");
+        doctorLogger.info("Getting all doctors");
 
         List<DoctorDTO> doctorDTOs = doctorService.getAllDoctors()
                 .stream()
@@ -50,7 +50,7 @@ public class DoctorController {
     public ResponseEntity addNewDoctor(@Valid @RequestBody DoctorDTO doctorDTO) {
 
         Logger doctorLogger = Logger.getLogger("DoctorController");
-        doctorLogger.info("Adding a new doctor");
+        doctorLogger.info("Adding a new doctor to the system");
 
         DoctorModel addDoctor = doctorService.addNewDoctor(doctorDTO);
         return
@@ -61,7 +61,7 @@ public class DoctorController {
     public ResponseEntity deleteDoctor(@RequestBody DoctorDTO doctorDTO) {
 
         Logger doctorLogger = Logger.getLogger("DoctorController");
-        doctorLogger.info("Deleting a doctor");
+        doctorLogger.info("Deleting a doctor from the system");
 
         DoctorModel deletedDoctor = doctorService.deleteDoctor(doctorDTO);
         return

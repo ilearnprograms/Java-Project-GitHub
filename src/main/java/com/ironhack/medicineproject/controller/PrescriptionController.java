@@ -25,7 +25,7 @@ public class PrescriptionController {
     public ResponseEntity getAllPrescriptions(){
 
         Logger prescriptionsLogger = Logger.getLogger("PrescriptionController");
-        prescriptionsLogger.info("Getting all Prescriptions");
+        prescriptionsLogger.info("Displaying all Prescriptions");
 
         List<PrescriptionDTO> prescriptionDTOS = prescriptionService.getAllPrescriptions()
                 .stream()
@@ -45,7 +45,7 @@ public class PrescriptionController {
     public List<PrescriptionModel> getMyPrescriptions(Authentication authentication) {
 
         Logger prescriptionsLogger = Logger.getLogger("PrescriptionController");
-        prescriptionsLogger.info("Getting Prescriptions for The Logged in Patient");
+        prescriptionsLogger.info("Displaying Prescriptions for The Patient that has logged in.");
 
         CustomUserDetails user =
                 (CustomUserDetails) authentication.getPrincipal();
@@ -63,13 +63,13 @@ public class PrescriptionController {
     ) {
 
         Logger prescriptionsLogger = Logger.getLogger("PrescriptionController");
-        prescriptionsLogger.info("Adding a new Prescription");
+        prescriptionsLogger.info("Adding a new Prescription to the database");
 
         prescriptionDTO.setPatientID(patientID);
 
         PrescriptionModel addPrescription = prescriptionService.addPrescription(prescriptionDTO);
         return
-                ResponseEntity.ok(new SuccessResponse("Prescription Added to the patient ", prescriptionDTO));
+                ResponseEntity.ok(new SuccessResponse("Prescription Added for the patient ", prescriptionDTO));
 
     }
 

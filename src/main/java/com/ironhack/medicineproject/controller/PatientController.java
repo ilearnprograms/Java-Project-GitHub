@@ -24,7 +24,7 @@ public class PatientController {
     public ResponseEntity getAllPatients(){
 
         Logger patientLogger = Logger.getLogger("PatientController");
-        patientLogger.info("Getting all Patients");
+        patientLogger.info("Displaying all active Patients");
 
         List<PatientDTO> patientDTOs = patientService.getAllPatients()
                 .stream()
@@ -43,7 +43,7 @@ public class PatientController {
     public ResponseEntity addNewPatient(@Valid @RequestBody PatientDTO patientDTO){
 
         Logger patientLogger = Logger.getLogger("PatientController");
-        patientLogger.info("Adding a new Patient");
+        patientLogger.info("Adding a new Patient to the database");
 
         PatientModel addPatient = patientService.addNewPatient(patientDTO);
         return
@@ -54,7 +54,7 @@ public class PatientController {
     public ResponseEntity<?> deletePatient(@RequestBody PatientDTO patientDTO) {
 
         Logger patientLogger = Logger.getLogger("PatientController");
-        patientLogger.info("Deleting a Patient");
+        patientLogger.info("Deleting a Patient from the database");
 
         PatientModel deletedPatient = patientService.deletePatient(patientDTO);
         return

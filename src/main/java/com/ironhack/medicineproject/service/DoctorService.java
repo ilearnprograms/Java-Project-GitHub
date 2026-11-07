@@ -35,7 +35,7 @@ public class DoctorService {
                 .findByUsernameIgnoreCase(doctorDTO.getUsername());
 
         if (doctor == null) {
-            throw new SearchNotFoundException("Couldn't find the Doctor: " +
+            throw new SearchNotFoundException("Couldn't find the following Doctor: " +
                       doctorDTO.getUsername());
         }
         doctorRepository.delete(doctor);

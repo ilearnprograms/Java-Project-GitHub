@@ -37,7 +37,7 @@ public class PrescriptionDTO {
     private Long medicineID;
 
     @JsonProperty("description")
-    @NotBlank(message = "Description cannot be empty")
+    @NotBlank(message = "Description cannot be empty. Please add daily consume guide for the Patient.")
     private String description;
 
     @JsonProperty("prescribedDate")

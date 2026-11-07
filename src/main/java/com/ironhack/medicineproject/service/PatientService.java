@@ -35,7 +35,7 @@ public class PatientService {
                 .findByUsernameIgnoreCase(patientDTO.getUsername());
 
         if (findByUsername == null) {
-            throw new SearchNotFoundException("Couldn't find patients with the user: " +
+            throw new SearchNotFoundException("Couldn't find patients with the username: " +
                     patientDTO.getUsername());
         }
         patientRepository.delete(findByUsername);

@@ -25,7 +25,7 @@ public class DoctorDTO {
 
 
     @JsonProperty("drTitle")
-    @NotNull(message = "Title cannot be empty")
+    @NotNull(message = "Medical Staff Title cannot be empty")
     private DoctorateTitles drTitle;
 
     @JsonProperty("drLastName")
